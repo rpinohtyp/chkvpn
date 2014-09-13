@@ -11,7 +11,6 @@ while True:
     #print ip_pub
     if ip_pub != ip_vpn:
         #print 'vpnIP not match'
-        #processname = 'transmission-daemon'
         for line in os.popen("ps xa"):
             fields = line.split()
             pid = fields[0]
@@ -20,7 +19,7 @@ while True:
             # Kill the Process. Change signal.SIGHUP to signal.SIGKILL if you like
                 os.kill(int(pid), signal.SIGKILL)
             # Do something else here
-                print 'transmission closed!'
+                print processname + ' closed!'
             # Restart the process
             #os.system(processname)
             # Hop out of loop
